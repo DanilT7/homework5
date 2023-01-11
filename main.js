@@ -1,8 +1,9 @@
+'use strict'
+
 let numOrStr = prompt('input number or string');
- console.log(numOrStr);
- if (typeof numOrStr === 'string') {
-    numOrStr=numOrStr.trim();
- }
+console.log(numOrStr);
+numOrStr = typeof numOrStr === 'string' ? numOrStr.trim() : numOrStr;
+console.log(numOrStr);
 
  switch (numOrStr) {
     case null:
@@ -12,11 +13,6 @@ let numOrStr = prompt('input number or string');
         console.log('Empty String');
         break;
     default:
-        if (isNaN(+numOrStr)) {
-            console.log(' number is Ba_NaN')
-        }
-        else {
-            console.log('OK!');    
-        }
+        isNaN(+numOrStr) ? console.log(' number is Ba_NaN') : console.log('OK!');
         break;
  }
